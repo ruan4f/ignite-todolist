@@ -1,3 +1,10 @@
+import { Header } from './components/Header'
+
 export function App() {
-  return <div>Hello World</div>
+  return (
+    <div>
+      <Header />
+      Hello World
+    </div>
+  )
 }
