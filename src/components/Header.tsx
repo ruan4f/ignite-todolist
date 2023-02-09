@@ -1,3 +1,10 @@
+import styles from './Header.module.css'
+import logo from '../assets/logo.svg'
+
 export function Header() {
-  return <div>Header</div>
+  return (
+    <header className={styles.header}>
+      <img src={logo} alt="Logotipo do ToDo List" />
+    </header>
+  )
 }
