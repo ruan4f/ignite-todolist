@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+:focus {
+  outline: none;
+}
+
 body {
   background: var(--gray-600);
   color: var(--gray-300);

@@ -17,10 +17,16 @@
 
 .newTaskForm>input {
   width: 39.875rem;
-  background: var(--gray-500);
-  padding: 1rem;
+  padding: 1rem;   
   border-radius: 8px;
   border: 1px solid var(--gray-700);
+  background: var(--gray-500);
+  color: var(--gray-300);
+}
+
+.newTaskForm>input:focus {
+  border-color: var(--purple-dark);
+  color: var(--gray-100);
 }
 
 .newTaskForm button {
