@@ -7,5 +7,27 @@
 }
 
 .newTask {
-  margin-top: calc(0px - 0.625rem);
+  display: flex;
+  direction: row;
+  margin-top: calc(0px - 0.625rem);  
+}
+
+.newTask button {
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  width: 5.625rem;
+  height: 3.25rem;
+
+  border: 0;
+  border-radius: 8px;  
+  
+  padding: 1rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+
+
+}
+
+.newTask button:hover {
+  background: var(--blue);
 }
