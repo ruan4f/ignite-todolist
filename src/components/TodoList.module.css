@@ -1,33 +1,41 @@
 .container {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.newTask {
-  display: flex;
-  direction: row;
-  margin-top: calc(0px - 0.625rem);  
+.newTask {  
+  margin-top: calc(0px - 1.625rem);
 }
 
-.newTask button {
+.newTaskForm {
+  display: flex;
+  gap: 1rem;
+}
+
+.newTaskForm>input {
+  width: 39.875rem;
+  background: var(--gray-500);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+}
+
+.newTaskForm button {
   background: var(--blue-dark);
   color: var(--gray-100);
   width: 5.625rem;
   height: 3.25rem;
 
   border: 0;
-  border-radius: 8px;  
-  
+  border-radius: 8px;
+
   padding: 1rem;
-  font-size: 0.875rem;
   font-weight: bold;
-
-
 }
 
-.newTask button:hover {
+.newTaskForm button:hover {
   background: var(--blue);
 }

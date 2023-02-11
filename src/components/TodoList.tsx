@@ -36,9 +36,10 @@ export function TodoList() {
   return (
     <main className={styles.container}>
       <div className={styles.newTask}>
-        <form onSubmit={handleCreateNewTask}>
+        <form className={styles.newTaskForm} onSubmit={handleCreateNewTask}>
           <input
             type="text"
+            placeholder="Adicione uma nova tarefa"
             value={newTaskText}
             onChange={handleNewTaskChange}
             onInvalid={handleNewTaskInvalid}
