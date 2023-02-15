@@ -48,6 +48,13 @@ export function TodoList() {
           <button>Criar</button>
         </form>
       </div>
+      <div className={styles.taskList}>
+        <div className={styles.taskListStatus}>
+          <span>Tarefas Criadas</span>
+          <span>Tarefas Concluídas</span>
+        </div>
+        <div></div>
+      </div>
     </main>
   )
 }

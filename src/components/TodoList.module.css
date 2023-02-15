@@ -1,7 +1,7 @@
 .container {
   flex: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -44,4 +44,15 @@
 
 .newTaskForm button:hover {
   background: var(--blue);
+}
+
+.taskList {
+  margin-top: 4rem;
+}
+
+.taskListStatus {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
