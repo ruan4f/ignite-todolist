@@ -4,9 +4,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin: 0 auto;
+  max-width: 52rem;
 }
 
 .newTask {
+  width: 100%;
   margin-top: calc(0px - 1.625rem);
 }
 
@@ -16,8 +19,9 @@
 }
 
 .newTaskForm input {
-  width: 39.875rem;
+  width: 100%;
   padding: 1rem;
+
   border-radius: 8px;
   border: 1px solid var(--gray-700);
   background: var(--gray-500);
@@ -30,15 +34,16 @@
 }
 
 .newTaskForm button {
-  background: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  gap: 0.25em;
   color: var(--gray-100);
-  width: 5.625rem;
-  height: 3.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--blue-dark);
+  transition: background-color 0.15s;
 
-  border: 0;
-  border-radius: 8px;
-
-  padding: 1rem;
   font-weight: bold;
 }
 
@@ -46,6 +51,9 @@
   background: var(--blue);
 }
 
+.newTaskForm svg {
+  font-size: 150%;
+}
 
 .list {
   display: grid;
@@ -53,11 +61,12 @@
 }
 
 .stats {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 4em 0 1.5em 0;
   font-size: 87.5%;
-  font-weight: 'bold';
+  font-weight: bold;
 }
 
 .stats span {
@@ -83,7 +92,7 @@
   gap: 1rem;
   padding: 1rem;
   border: 1px solid var(--gray-400);
-  border-radius: 1px;
+  border-radius: 0.5rem;
   background-color: var(gray-500);
 }
 
@@ -108,7 +117,7 @@
   padding: 0.125rem;
   font-size: 87.5%;
   border: 1px solid var(--blue);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background: none;
   transition: opacity 0.15s, background-color 0.15s, border 0.15s;
 }
@@ -116,14 +125,6 @@
 .btnComplete,
 .btnIncomplete svg {
   opacity: 0;
-}
-
-.btnComplete:focus-visible,
-.btnIncomplete:focus-visible,
-.btnComplete:hover,
-.btnIncomplete:hover {
-  opacity: 0.7;
-  background-color: rgba(var(--blue), 0.1);
 }
 
 .btnComplete {
@@ -136,13 +137,6 @@
   opacity: 1;
 }
 
-.btnComplete:focus-visible,
-.btnComplete:hover {
-  opacity: 1;
-  background-color: var(--purple);
-  border: 1px solid var(--purple);
-}
-
 .btnDelete {
   display: flex;
   justify-content: center;
@@ -152,13 +146,6 @@
   border: none;
   background: none;
   transition: background-color 0.15s, border-radius 0.15s;
-}
-
-.btnDelete:focus-visible,
-.btnDelete:hover {
-  color: var(--danger);
-  border-radius: 2px;
-  background-color: var(--gray-400);
 }
 
 .emptyList {

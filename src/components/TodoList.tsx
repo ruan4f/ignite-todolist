@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 import { v4 as uuid } from 'uuid'
-import { Check, ClipboardText, Trash } from 'phosphor-react'
+import { Check, ClipboardText, Trash, PlusCircle } from 'phosphor-react'
 
 import styles from './TodoList.module.css'
 
@@ -72,9 +72,12 @@ export function TodoList() {
             onInvalid={handleNewTaskInvalid}
             required
           />
-          <button type="submit">Criar</button>
+          <button type="submit">
+            Criar <PlusCircle />
+          </button>
         </form>
       </div>
+
       <div className={styles.stats}>
         <p>
           Tarefas criadas <span>{taskCount}</span>
