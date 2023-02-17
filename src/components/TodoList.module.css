@@ -3,10 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.newTask {  
+.newTask {
   margin-top: calc(0px - 1.625rem);
 }
 
@@ -15,16 +15,16 @@
   gap: 1rem;
 }
 
-.newTaskForm>input {
+.newTaskForm input {
   width: 39.875rem;
-  padding: 1rem;   
+  padding: 1rem;
   border-radius: 8px;
   border: 1px solid var(--gray-700);
   background: var(--gray-500);
   color: var(--gray-300);
 }
 
-.newTaskForm>input:focus {
+.newTaskForm input:focus-visible {
   border-color: var(--purple-dark);
   color: var(--gray-100);
 }
@@ -46,13 +46,131 @@
   background: var(--blue);
 }
 
-.taskList {
-  margin-top: 4rem;
+
+.list {
+  display: grid;
+  gap: 1rem;
 }
 
-.taskListStatus {
-  width: 100%;
+.stats {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  padding: 4em 0 1.5em 0;
+  font-size: 87.5%;
+  font-weight: 'bold';
+}
+
+.stats span {
+  color: var(--gray-200);
+  padding: 0.125rem 0.5rem;
+  margin-left: 0.25rem;
+
+  background-color: var(--gray-400);
+}
+
+.stats p:first-child {
+  color: var(--blue);
+}
+
+.stats p:last-child {
+  color: var(--purple);
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--gray-400);
+  border-radius: 1px;
+  background-color: var(gray-500);
+}
+
+.taskComplete,
+.taskIncomplete {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  color: var(--gray-400);
+  transition: text-decoration 0.5s ease-out, color 0.5s ease-out;
+}
+
+.taskComplete {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.btnComplete,
+.btnIncomplete {
+  display: flex;
+  justify-content: center;
+  padding: 0.125rem;
+  font-size: 87.5%;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  background: none;
+  transition: opacity 0.15s, background-color 0.15s, border 0.15s;
+}
+
+.btnComplete,
+.btnIncomplete svg {
+  opacity: 0;
+}
+
+.btnComplete:focus-visible,
+.btnIncomplete:focus-visible,
+.btnComplete:hover,
+.btnIncomplete:hover {
+  opacity: 0.7;
+  background-color: rgba(var(--blue), 0.1);
+}
+
+.btnComplete {
+  color: var(--gray-100);
+  border: 1px solid var(--purple-dark);
+  background-color: var(--purple-dark);
+}
+
+.btnComplete svg {
+  opacity: 1;
+}
+
+.btnComplete:focus-visible,
+.btnComplete:hover {
+  opacity: 1;
+  background-color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+.btnDelete {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  font-size: 120%;
+  color: var(--gray-300);
+  border: none;
+  background: none;
+  transition: background-color 0.15s, border-radius 0.15s;
+}
+
+.btnDelete:focus-visible,
+.btnDelete:hover {
+  color: var(--danger);
+  border-radius: 2px;
+  background-color: var(--gray-400);
+}
+
+.emptyList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4em;
+  gap: 1rem;
+  color: var(--gray-300);
+}
+
+.emptyList svg {
+  font-size: 350%;
+  opacity: 0.5;
 }

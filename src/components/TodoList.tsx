@@ -1,10 +1,13 @@
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
+import { v4 as uuid } from 'uuid'
+import { Check, ClipboardText, Trash } from 'phosphor-react'
+
 import styles from './TodoList.module.css'
 
 interface Task {
   id: string
   description: string
-  completed: boolean
+  isComplete: boolean
 }
 
 export function TodoList() {
@@ -15,9 +18,9 @@ export function TodoList() {
     event.preventDefault()
 
     const newTask = {
-      id: '',
+      id: uuid(),
       description: newTaskText,
-      completed: false,
+      isComplete: false,
     }
 
     setTasks([...tasks, newTask])
@@ -33,6 +36,30 @@ export function TodoList() {
     event.target.setCustomValidity('Esse campo é obrigatório!')
   }
 
+  function handleTaskComplete(id: string) {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === id) {
+          task.isComplete = !task.isComplete
+        }
+        return task
+      }),
+    )
+  }
+
+  function handleTaskDelete(id: string) {
+    setTasks(
+      tasks.filter((task) => {
+        return task.id !== id
+      }),
+    )
+  }
+
+  const taskCount = tasks.length
+  const taskCompleteCount = tasks.filter((task) => {
+    return task.isComplete
+  }).length
+
   return (
     <main className={styles.container}>
       <div className={styles.newTask}>
@@ -45,16 +72,61 @@ export function TodoList() {
             onInvalid={handleNewTaskInvalid}
             required
           />
-          <button>Criar</button>
+          <button type="submit">Criar</button>
         </form>
       </div>
-      <div className={styles.taskList}>
-        <div className={styles.taskListStatus}>
-          <span>Tarefas Criadas</span>
-          <span>Tarefas Concluídas</span>
-        </div>
-        <div></div>
+      <div className={styles.stats}>
+        <p>
+          Tarefas criadas <span>{taskCount}</span>
+        </p>
+        <p>
+          Concluídas{' '}
+          {taskCount > 0 ? (
+            <span>
+              {taskCompleteCount} de {taskCount}
+            </span>
+          ) : (
+            <span>{taskCount}</span>
+          )}
+        </p>
       </div>
+      {taskCount > 0 ? (
+        <ul className={styles.list}>
+          {tasks.map((task) => (
+            <li key={task.id} className={styles.task}>
+              <button
+                onClick={() => handleTaskComplete(task.id)}
+                className={
+                  task.isComplete ? styles.btnComplete : styles.btnIncomplete
+                }
+              >
+                <Check weight="bold" />
+              </button>
+              <span
+                className={
+                  task.isComplete ? styles.taskComplete : styles.taskIncomplete
+                }
+              >
+                {task.description}
+              </span>
+              <button
+                onClick={() => handleTaskDelete(task.id)}
+                className={styles.btnDelete}
+              >
+                <Trash weight="light" />
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className={styles.emptyList}>
+          <ClipboardText weight="light" />
+          <p>
+            <strong>Você ainda não tem tarefas cadastradas</strong> <br />
+            Crie tarefas e organize seus itens a fazer
+          </p>
+        </div>
+      )}
     </main>
   )
 }
