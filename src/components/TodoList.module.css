@@ -8,9 +8,24 @@
   max-width: 52rem;
 }
 
+@media (max-width: 400px) {
+  .newTaskForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .newTaskForm button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .newTask {
   width: 100%;
   margin-top: calc(0px - 1.625rem);
+  padding: 0 1rem;
 }
 
 .newTaskForm {
@@ -56,15 +71,17 @@
 }
 
 .list {
+  width: 100%;
   display: grid;
   gap: 1rem;
+  padding: 0 1rem;
 }
 
 .stats {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 4em 0 1.5em 0;
+  padding: 4em 1rem 1.5em 1rem;
   font-size: 87.5%;
   font-weight: bold;
 }
@@ -73,7 +90,7 @@
   color: var(--gray-200);
   padding: 0.125rem 0.5rem;
   margin-left: 0.25rem;
-
+  border-radius: 0.5rem;
   background-color: var(--gray-400);
 }
 
@@ -101,7 +118,7 @@
   display: flex;
   justify-content: left;
   width: 100%;
-  color: var(--gray-400);
+  color: var(--gray-100);
   transition: text-decoration 0.5s ease-out, color 0.5s ease-out;
 }
 
@@ -116,21 +133,29 @@
   justify-content: center;
   padding: 0.125rem;
   font-size: 87.5%;
-  border: 1px solid var(--blue);
-  border-radius: 0.5rem;
+  border: 1.5px solid var(--blue);
+  border-radius: 1rem;
   background: none;
   transition: opacity 0.15s, background-color 0.15s, border 0.15s;
 }
 
-.btnComplete,
 .btnIncomplete svg {
   opacity: 0;
+}
+
+.btnIncomplete:hover {
+  background-color: rgba(var(--blue-dark-rgb), 0.25);
 }
 
 .btnComplete {
   color: var(--gray-100);
   border: 1px solid var(--purple-dark);
   background-color: var(--purple-dark);
+}
+
+.btnComplete:hover {
+  border: 1px solid var(--purple);
+  background-color: var(--purple);
 }
 
 .btnComplete svg {
@@ -140,21 +165,31 @@
 .btnDelete {
   display: flex;
   justify-content: center;
-  padding: 0.5rem;
   font-size: 120%;
   color: var(--gray-300);
   border: none;
   background: none;
   transition: background-color 0.15s, border-radius 0.15s;
+  border-radius: 0.125rem;
+  padding: 0.125rem;
+}
+
+.btnDelete:hover {
+  color: var(--danger);
+  background: var(--gray-400);
 }
 
 .emptyList {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4em;
+  padding: 4em 1rem 0 1rem;
+  margin: 0 1rem;
   gap: 1rem;
   color: var(--gray-300);
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
 }
 
 .emptyList svg {
