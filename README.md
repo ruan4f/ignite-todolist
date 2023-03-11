@@ -7,10 +7,10 @@
 </p>
 
 <p align="center">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/ruan4f/ignite-todo-app">
-  <img alt="GitHub" src="https://img.shields.io/github/license/ruan4f/ignite-todo-app">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/ruan4f/ignite-todo-app">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ruan4f/ignite-todo-app?style=social">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/ruan4f/ignite-todolist">
+  <img alt="GitHub" src="https://img.shields.io/github/license/ruan4f/ignite-todolist">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/ruan4f/ignite-todolist">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ruan4f/ignite-todolist?style=social">
 </p>
 
 <p align="center">
@@ -72,17 +72,17 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[TypeScript](https://www.typescriptlang.org/)**
 - **[Vite](https://vitejs.dev/)**
 
-> Veja o arquivo [package.json](https://github.com/ruan4f/ignite-todo-app/blob/main/package.json)
+> Veja o arquivo [package.json](https://github.com/ruan4f/ignite-todolist/blob/main/package.json)
 
 
 ## 🚀 Instalação e uso
 
 ```bash
 # Clone o repositório
-git clone https://github.com/ruan4f/ignite-todo-app.git
+git clone https://github.com/ruan4f/ignite-todolist.git
 
 # Acesse a pasta do projeto
-cd ignite-todo-app
+cd ignite-todolist
 
 # Instale as dependências
 npm install
@@ -97,7 +97,7 @@ npm run dev
 ## 📝 Licença
 
 <a href="https://opensource.org/licenses/MIT">
-    <img alt="GitHub" src="https://img.shields.io/github/license/ruan4f/ignite-todo-app">
+    <img alt="GitHub" src="https://img.shields.io/github/license/ruan4f/ignite-todolist">
 </a>
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE.md) para mais detalhes.
